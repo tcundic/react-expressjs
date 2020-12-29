@@ -9,9 +9,13 @@ body {
     color: $app-gray;
 }
 
-h1 {
+h1, h2 {
     font-size: 3rem;
     color: $app-gray;
+}
+
+h2 {
+    font-size: 2rem;
 }
 
 .container {

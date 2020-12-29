@@ -7,7 +7,7 @@ const Header = () => {
             <div className="container header-container">
                 <div className="container__header-items navbar navbar-expand-lg">
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
+                        <span className="mdi mdi-menu"></span>
                     </button>
 
                     <div className="header-items__navbar-content collapse navbar-collapse" id="navbarContent">

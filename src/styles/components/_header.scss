@@ -8,6 +8,17 @@ header {
     margin-top: 0;
 }
 
+.navbar-toggler {
+    font-size: 3rem;
+    color: $app-blue-1;
+    margin-bottom: 1rem;
+
+    &:focus {
+        border-color: $app-blue-1;
+        outline-color: $app-blue-1;
+    }
+}
+
 .header-items__navbar-content {
     justify-content: space-between;
 }

@@ -10,6 +10,7 @@ const App = () => {
             <Header />
             <Switch>
                 <Route path="/" component={Home} exact={true} />
+                <Route render={() => <Redirect to="/" />}/>
             </Switch>
         </div>
     );

@@ -1,0 +1,28 @@
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.home-container__item {
+    width: 45%;
+
+    & img {
+        width: 100%;
+    }
+}
+
+@media(max-width: 768px) {
+    .home-container {
+        flex-direction: column;
+    }
+
+    .home-container__item {
+        width: 100%;
+
+        & img {
+            height: auto;
+            margin-bottom: 2rem;
+        }
+    }
+}

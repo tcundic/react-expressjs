@@ -1,0 +1,40 @@
+header {
+    background-color: $app-white;
+    box-shadow: $app-shadow;
+    padding: 1rem 0;
+}
+
+.header-container {
+    margin-top: 0;
+}
+
+.header-items__navbar-content {
+    justify-content: space-between;
+}
+
+.navbar-expand-lg {
+    & .nav-item {
+        &:not(:last-child) {
+            margin-right: 2.5rem;
+        }
+    }
+
+    & .navbar-nav {
+        & .nav-link {
+            padding: .7rem 1rem;
+            cursor: pointer;
+            border-radius: .4rem;
+            color: $app-blue-1;
+
+            &:hover {
+                color: $app-white;
+                background-color: $app-blue-2;
+            }
+
+            &.active {
+                background-color: $app-blue-1;
+                color: $app-white;
+            }
+        }
+    }
+}

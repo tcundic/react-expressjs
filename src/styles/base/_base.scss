@@ -1,0 +1,129 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    background-color: $app-blue-3;
+    color: $app-gray;
+}
+
+h1 {
+    font-size: 3rem;
+    color: $app-gray;
+}
+
+.container {
+    margin-top: 3.5rem;
+}
+
+.app-btn {
+    font-size: 2rem;
+    color: $app-white;
+    background-color: $app-blue-1;
+    padding: .7rem 1rem;
+    border-radius: .4rem;
+    border: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: $app-white;
+        text-decoration: none;
+    }
+}
+
+.app-text-input {
+    border: .1rem solid $app-gray-light;
+    border-radius: .8rem;
+    color: $app-gray;
+    font-size: 1.8rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .20);
+
+    &::placeholder {
+        color: $app-gray-disabled;
+    }
+}
+
+.app-checkbox {
+    font-size: 1.6rem;
+
+    & label {
+        position: relative;
+        padding-left: 4rem;
+        color: $app-gray;
+
+        &::before,
+        &::after {
+            position: absolute;
+        }
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            box-shadow: 0 0 .5rem rgba(0, 0, 0, .15);
+            border-radius: .6rem;
+            top: .3rem;
+            left: 0;
+            border: .1rem solid $app-gray-light;
+            background-color: $app-white;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            height: .9rem;
+            width: 1.3rem;
+            border-left: .25rem solid;
+            border-bottom: .25rem solid;
+            transform: rotate(-60deg);
+            left: .3rem;
+            top: .7rem;
+        }
+    }
+
+    & .checkbox {
+        opacity: 0;
+        width: .1rem;
+        height: .1rem;
+
+        & + label {
+            &::after {
+                content: none;
+            }
+        }
+
+        &:checked {
+            & + label {
+                &::after {
+                    content: '';
+                }
+            }
+        }
+    }
+}
+
+.app-label {
+    font-size: 1.6rem;
+    color: $app-gray;
+}
+
+.app-form-group {
+    margin-top: 2rem;
+}
+
+.app-form-error {
+    color: $app-error-red;
+}
+
+.app-card {
+    padding: 4.5rem 6rem;
+    margin-top: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}

@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import submitContactForm from '../util/APIUtils';
 
 const ContactUs = () => {
     const { register, handleSubmit, errors, setValue, getValues, formState } = useForm({
@@ -9,8 +10,28 @@ const ContactUs = () => {
 
     const { isDirty, isValid } = formState;
 
+    const [resMessages, setResMessages] = useState({});
+
     const onSubmit = data => {
-        console.log('S U B M I T', data);
+
+        setResMessages({});
+
+        submitContactForm(data)
+            .then(response => {
+                console.log(response);
+
+                if (response[0] === 200) {
+                    setResMessages({
+                        status: response[0],
+                        message: response[1].message
+                    });
+                } else if (response[0] === 422) {
+                    setResMessages({
+                        status: response[0],
+                        errors: response[1].errors
+                    });
+                }
+            }).catch(error => console.error(error));
     };
 
     return (
@@ -30,7 +51,7 @@ const ContactUs = () => {
                             ref={register({
                                 required: getValues("validation"),
                                 pattern: {
-                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    value: getValues("validation") ? /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i : /.*/,
                                 }
                             })}
                             onChange={e => {
@@ -51,7 +72,7 @@ const ContactUs = () => {
                             placeholder="Enter message"
                             ref={register({
                                 required: getValues("validation"),
-                                minLength: 30
+                                minLength: getValues("validation") ? 30 : 0
                             })}
                             rows="6"
                             cols="50"
@@ -83,7 +104,10 @@ const ContactUs = () => {
                         </button>
                     </div>
 
-                    {getValues("validation") === true && formState.isSubmitSuccessful === true && <h2 className="app-form-success">We received your message and we'll reply to you shortly</h2>}
+                    {resMessages.status === 200 && <h2 className="app-form-success">{resMessages.message}</h2>}
+                    {resMessages.status === 422 && resMessages.errors.map((errorMessage, index) => (
+                        <h2 key={index} className="app-form-error">{errorMessage}</h2>
+                    ))}
                 </form>
             </div>
         </div>

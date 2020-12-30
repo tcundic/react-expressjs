@@ -1,12 +1,18 @@
+const { request } = require('express');
 var express = require('express');
 var app = express();
+var cors = require('cors');
 
-app.get('/', function(req, res) {
-    res.send("Hello World");
-});
+var corsOptions = {
+    origin: 'http://localhost:8080',
+    optionsSuccessStatus: 200
+};
 
-var things = require('./things.js');
+app.use(cors(corsOptions));
+app.use(express.json());
 
-app.use('/things', things);
+var contact = require('./contact.js');
+
+app.use('/API/contact', contact);
 
 app.listen(3000);

@@ -18,10 +18,12 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start-app": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "serve": "lite-server",
-    "start-express": "npx nodemon .\\expressjs\\index.js"
+    "start-express": "npx nodemon .\\expressjs\\index.js",
+    "start": "node expressjs/index.js",
+    "heroku-postbuild": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",

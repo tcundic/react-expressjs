@@ -9,7 +9,7 @@ After that you can run `npm install` and all required run time and development p
 
 ### Running
 
-To start application, in command prompt run `npm run start` command. Application will be build and application will be opened in browser automatically.
+To start application, in command prompt run `npm run start-app` command. Application will be build and application will be opened in browser automatically.
 Also to start backend run `npm run start-express` command in other terminal.
 
 ### Deploying

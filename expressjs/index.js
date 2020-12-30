@@ -2,6 +2,7 @@ const { request } = require('express');
 var express = require('express');
 var app = express();
 var cors = require('cors');
+const port = process.env.PORT || 3000;
 
 var corsOptions = {
     origin: 'http://localhost:8080',
@@ -15,4 +16,4 @@ var contact = require('./contact.js');
 
 app.use('/API/contact', contact);
 
-app.listen(3000);
+app.listen(port);

@@ -23,7 +23,7 @@
     "serve": "lite-server",
     "start-express": "npx nodemon .\\expressjs\\index.js",
     "start": "node expressjs/index.js",
-    "heroku-postbuild": "npm run build && npm run serve"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",

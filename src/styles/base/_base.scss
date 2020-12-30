@@ -30,6 +30,15 @@ h2 {
     border-radius: .4rem;
     border: 0;
 
+    &.disabled {
+        background-color: $app-gray-disabled;
+        color: $app-gray-disabled-accent;
+
+        &:hover {
+            color: $app-gray-disabled-accent;
+        }
+    }
+
     &:focus {
         outline: none;
     }
@@ -125,9 +134,18 @@ h2 {
     color: $app-error-red;
 }
 
+.app-form-success {
+    color: $app-success-green;
+}
+
 .app-card {
     padding: 4.5rem 6rem;
     margin-top: 1rem;
     align-items: flex-start;
     margin-bottom: 1rem;
+}
+
+.app-form__form-buttons {
+    display: flex;
+    justify-content: flex-end;
 }

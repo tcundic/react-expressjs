@@ -53,6 +53,7 @@
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^6.13.1",
     "react-router-dom": "^5.2.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",

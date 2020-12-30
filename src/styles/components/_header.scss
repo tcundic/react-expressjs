@@ -49,3 +49,13 @@ header {
         }
     }
 }
+
+@media(max-width: 991px) {
+    .nav-item {
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
